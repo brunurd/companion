@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Youtube Client</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="flex-container">
+  <div class="yt-client-bar">
+    <div class="yt-client-draggable drag"></div>
+    
+    <nav class="yt-client-m">
+      <span class="yt-client-m-btn click inactive">
+        <i class="fa fa-search-plus js-zoom"></i>
+      </span>
+      <span class="yt-client-m-btn click" onclick="pin()">
+        <i class="fa fa-unlock js-pin"></i>
+      </span>
+      <span class="yt-client-m-btn click" onclick="refresh()">
+        <i class="fa fa-refresh"></i>
+      </span>
+      <span class="yt-client-m-btn click" onclick="minimizeWindow()">
+        <i class="fa fa-arrow-down"></i>
+      </span>
+      <span class="yt-client-m-btn click" onclick="closeWindow()">
+        <i class="fa fa-times"></i>
+      </span>
+    </nav>
+  </div>
+  
+  <webview class="yt-webview" src="https://m.youtube.com"></webview>
+  
+  <script src="scripts.js"></script>
+</body>
+
+</html>

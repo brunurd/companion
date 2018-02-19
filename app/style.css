@@ -1,0 +1,69 @@
+/* reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  background-color: white;
+}
+a, a * {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover, a:hover *, a *:hover {
+  text-decoration: none;
+}
+/* helpers */
+.right {
+  float: right;
+}
+.drag {
+  -webkit-app-region: drag;
+}
+.click {
+  cursor: pointer;
+}
+.move {
+  cursor: move;
+}
+.inactive {
+  opacity: 0.2;
+  cursor: default;
+}
+/* components */
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+.yt-client-bar {
+  height: 30px;
+  padding: 5px;
+  background-color: rgb(40,40,40);
+  transition: height 0.5s ease 0s;
+  transition: padding 0.25s ease 0s;
+}
+.yt-client-draggable {
+  width: calc(100% - 130px);
+  height: 15px;
+}
+.yt-webview {
+  height: 100%;
+  overflow: hidden;
+}
+.yt-client-m {
+  height: 15px;
+  position: fixed;
+  z-index: 2;
+  top: 5px;
+  right: 10px;
+}
+.yt-client-m-btn, .inactive.yt-client-m-btn:hover {
+  font-size: 15px;
+  margin-left: 10px;
+  color: rgba(245,245,245,0.3);
+}
+.yt-client-m-btn:hover {
+  color: rgba(247,247,247,0.6);
+}

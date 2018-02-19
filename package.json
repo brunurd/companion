@@ -1,0 +1,27 @@
+{
+  "name": "youtube-companion",
+  "version": "1.0.0",
+  "description": "A client to watch youtube videos outside the browser and pin on top of everything.",
+  "main": "index.js",
+  "scripts": {
+    "test": "electron index",
+    "build-win64": "electron-packager . YoutubeCompanion --platform=win32 --arch=x64 --out=bin",
+    "build-linux": "electron-packager . YoutubeCompanion --platform=x86 --arch=x86 --out=bin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/brunurd/youtube-client.git"
+  },
+  "keywords": [
+    "youtube",
+    "client",
+    "software"
+  ],
+  "author": "Bruno Araujo <bruno@lavaleakgames.com>",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/brunurd/youtube-client#readme",
+  "devDependencies": {
+    "electron": "1.7.11",
+    "electron-packager": "^11.0.1"
+  }
+}
