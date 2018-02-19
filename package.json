@@ -4,9 +4,11 @@
   "description": "A client to watch youtube videos outside the browser and pin on top of everything.",
   "main": "index.js",
   "scripts": {
-    "test": "electron index",
-    "build-win64": "electron-packager . YoutubeCompanion --platform=win32 --arch=x64 --out=bin",
-    "build-linux": "electron-packager . YoutubeCompanion --platform=x86 --arch=x86 --out=bin"
+    "test": "electron index debug",
+    "build-win": "electron-packager . YoutubeCompanion --platform=win32 --arch=ia32 --out=bin && asar pack bin/YoutubeCompanion-win32-ia32/resources/app bin/YoutubeCompanion-win32-ia32/resources/app.asar && rm -rf bin/YoutubeCompanion-win32-ia32/resources/app",
+    "build-win64": "electron-packager . YoutubeCompanion --platform=win32 --arch=x64 --out=bin && asar pack bin/YoutubeCompanion-win32-x64/resources/app bin/YoutubeCompanion-win32-x64/resources/app.asar && rm -rf bin/YoutubeCompanion-win32-x64/resources/app",
+    "build-linux": "electron-packager . YoutubeCompanion --platform=linux --arch=ia32 --out=bin && asar pack bin/YoutubeCompanion-linux-ia32/resources/app bin/YoutubeCompanion-linux-ia32/resources/app.asar && rm -rf bin/YoutubeCompanion-linux-ia32/resources/app",
+    "build-linux64": "electron-packager . YoutubeCompanion --platform=linux --arch=x64 --out=bin && asar pack bin/YoutubeCompanion-linux-x64/resources/app bin/YoutubeCompanion-linux-x64/resources/app.asar && rm -rf bin/YoutubeCompanion-linux-x64/resources/app"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
   "license": "MIT",
   "homepage": "https://bitbucket.org/brunurd/youtube-client#readme",
   "devDependencies": {
+    "asar": "^0.14.2",
     "electron": "1.7.11",
     "electron-packager": "^11.0.1"
   }

@@ -22,7 +22,10 @@ const start = ()=> {
   WINDOW.setPosition(pos.x, pos.y)
   WINDOW.loadURL('file://' + __dirname + '/app/index.html')
   WINDOW.on('closed', ()=> { window = null })
-  //WINDOW.webContents.openDevTools()
+  if (process.argv[2] !== 'undefined') {
+    if (process.argv[2] === 'debug')
+      WINDOW.webContents.openDevTools()
+  }
 }
 
 const macOSXClose = ()=> {
