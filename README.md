@@ -1,4 +1,4 @@
 # YOUTUBE COMPANION  
 
 
-A client to watch youtube videos outside the browser and pin on top of everything.
+A client to watch youtube videos outside the browser and pin on top of everything (always on top).
