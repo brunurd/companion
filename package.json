@@ -28,7 +28,7 @@
   "homepage": "https://bitbucket.org/brunurd/youtube-client#readme",
   "devDependencies": {
     "asar": "^0.14.2",
-    "electron": "1.7.11",
+    "electron": "^3.0.2",
     "electron-packager": "^11.0.1",
     "png2icons": "^0.9.1"
   }
