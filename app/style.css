@@ -67,3 +67,19 @@ a:hover, a:hover *, a *:hover {
 .yt-client-m-btn:hover {
   color: rgba(247,247,247,0.6);
 }
+.search-bar {
+  height: 30px;
+  width: 100%;
+  overflow: hidden;
+}
+.search-bar-item {
+  height: 100%;
+  float: left;
+}
+.search-bar input {
+  width: 90%;
+}
+.search-bar button {
+  width: 10%;
+}
+

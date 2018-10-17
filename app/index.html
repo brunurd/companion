@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Youtube Client</title>
+  <title>Web Client</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -32,8 +32,13 @@
       </span>
     </nav>
   </div>
+
+  <div class="search-bar">
+    <input id="search-input" class="search-bar-item" type="text" placeholder="Url here...">
+    <button class="search-bar-item" type="button" onclick="refresh(document.querySelector('#search-input').value)">Go</button>
+  </div>
   
-  <webview class="yt-webview" src="https://m.youtube.com"></webview>
+  <webview class="yt-webview" src="https://google.com"></webview>
   
   <script src="scripts.js"></script>
 </body>

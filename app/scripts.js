@@ -32,10 +32,14 @@ const minimizeWindow = ()=> {
   WINDOW.minimize()
 }
 
-const refresh = ()=> {
+const refresh = (url)=> {
   webview.remove()
   webview = document.createElement('WEBVIEW')
-  webview.src = 'https://m.youtube.com'
+
+  if (!url.includes('http'))
+    url = 'https://' + url
+
+  webview.src = url
   webview.classList.add('yt-webview')
   document.body.appendChild(webview)
 }
