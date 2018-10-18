@@ -33,10 +33,10 @@
     </nav>
   </div>
 
-  <div class="search-bar">
+  <form class="search-bar">
     <input id="search-input" class="search-bar-item" type="text" placeholder="Url here...">
-    <button class="search-bar-item" type="button" onclick="refresh(document.querySelector('#search-input').value)">Go</button>
-  </div>
+    <button class="search-bar-item" type="submit" onclick="refresh(document.querySelector('#search-input').value)">Go</button>
+  </form>
   
   <webview class="yt-webview" src="https://google.com"></webview>
   
