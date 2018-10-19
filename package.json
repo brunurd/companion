@@ -1,10 +1,11 @@
 {
   "name": "youtube-companion",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A client to watch youtube videos outside the browser and pin on top of everything.",
   "main": "index.js",
   "scripts": {
-    "test": "electron index debug",
+    "test": "electron index",
+    "debug": "electron index debug",
     "icons": "png2icons ./app/images/yt_logo_rgb_light.png ./app/images/favicon -all -bc -i",
     "build-win": "electron-packager . YoutubeCompanion --platform=win32 --out=bin && asar pack bin/YoutubeCompanion-win32-ia32/resources/app bin/YoutubeCompanion-win32-ia32/resources/app.asar && rm -rf bin/YoutubeCompanion-win32-ia32/resources/app",
     "build-win64": "electron-packager . YoutubeCompanion --platform=win32 --arch=x64 --out=bin && asar pack bin/YoutubeCompanion-win32-x64/resources/app bin/YoutubeCompanion-win32-x64/resources/app.asar && rm -rf bin/YoutubeCompanion-win32-x64/resources/app",

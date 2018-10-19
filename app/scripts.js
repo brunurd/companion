@@ -37,7 +37,7 @@ const minimizeWindow = () => {
 
 const refresh = (url) => {
   if (typeof url === 'undefined')
-    url = 'https://google.com'
+    url = 'https://m.youtube.com'
 
   if (!url.includes('http'))
     url = 'https://' + url
