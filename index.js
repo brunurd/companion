@@ -7,17 +7,15 @@ const electron = require('electron')
 
 const start = ()=> {
   WINDOW = new BrowserWindow({
-    width:1000,
-    height:600,
+    width: 500,
+    height: 450,
     icon: __dirname + '/app/images/yt_logo_rgb_light.png',
-    //minWidth: 500,
-    //minHeight: 300,
     frame:false
   })
   SCREEN = electron.screen.getPrimaryDisplay()
   let pos = {
-    x : SCREEN.size.width - 1030,
-    y : SCREEN.size.height - 700
+    x : SCREEN.size.width - 530,
+    y : SCREEN.size.height - 550
   }
   WINDOW.setPosition(pos.x, pos.y)
   WINDOW.loadURL('file://' + __dirname + '/app/index.html')

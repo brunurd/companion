@@ -68,18 +68,25 @@ a:hover, a:hover *, a *:hover {
   color: rgba(247,247,247,0.6);
 }
 .search-bar {
-  height: 30px;
+  height: 40px;
   width: 100%;
   overflow: hidden;
 }
 .search-bar-item {
   height: 100%;
-  float: left;
+  position: relative;
 }
 .search-bar input {
-  width: 90%;
+  width: calc(100% - 60px);
+  padding: 10px;
+  float: left;
 }
 .search-bar button {
-  width: 10%;
+  width: 60px;
+  float: right;
+  z-index: 2;
+  background-color: #33455a;
+  border: none;
+  color: #fff;
 }
 
