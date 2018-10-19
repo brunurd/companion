@@ -1,6 +1,6 @@
 {
   "name": "youtube-companion",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A client to watch youtube videos outside the browser and pin on top of everything.",
   "main": "index.js",
   "scripts": {
