@@ -1,17 +1,31 @@
 {
-  "name": "youtube-companion",
-  "version": "1.1.2",
+  "name": "youtube-companion-plus",
+  "version": "1.2.0",
   "description": "A client to watch youtube videos outside the browser and pin on top of everything.",
   "main": "index.js",
+  "build": {
+    "appId": "com.brunurd.youtube-companion",
+    "productName": "Youtube Companion Plus",
+    "mac": {
+      "category": "public.app-category.entertainment",
+      "target": "default",
+      "icon": "app/images/favicon.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "app/images/favicon.ico"
+    },
+    "nsis": {
+      "artifactName": "${productName} ${version}.exe"
+    }
+  },
   "scripts": {
+    "postinstall": "install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
     "test": "electron index",
     "debug": "electron index debug",
-    "icons": "png2icons ./app/images/yt_logo_rgb_light.png ./app/images/favicon -all -bc -i",
-    "build-win": "electron-packager . YoutubeCompanion --platform=win32 --out=bin && asar pack bin/YoutubeCompanion-win32-ia32/resources/app bin/YoutubeCompanion-win32-ia32/resources/app.asar && rm -rf bin/YoutubeCompanion-win32-ia32/resources/app",
-    "build-win64": "electron-packager . YoutubeCompanion --platform=win32 --arch=x64 --out=bin && asar pack bin/YoutubeCompanion-win32-x64/resources/app bin/YoutubeCompanion-win32-x64/resources/app.asar && rm -rf bin/YoutubeCompanion-win32-x64/resources/app",
-    "build-linux": "electron-packager . YoutubeCompanion --platform=linux --out=bin && asar pack bin/YoutubeCompanion-linux-ia32/resources/app bin/YoutubeCompanion-linux-ia32/resources/app.asar && rm -rf bin/YoutubeCompanion-linux-ia32/resources/app",
-    "build-linux64": "electron-packager . YoutubeCompanion --platform=linux --arch=x64 --out=bin && asar pack bin/YoutubeCompanion-linux-x64/resources/app bin/YoutubeCompanion-linux-x64/resources/app.asar && rm -rf bin/YoutubeCompanion-linux-x64/resources/app",
-    "build-macOS": "electron-packager . YoutubeCompanion --platform=darwin --arch=x64 --out=bin && cp ./app/images/favicon.icns bin/YoutubeCompanion-darwin-x64/YoutubeCompanion.app/Contents/Resources/electron.icns && asar pack bin/YoutubeCompanion-darwin-x64/YoutubeCompanion.app/Contents/Resources/app bin/YoutubeCompanion-darwin-x64/YoutubeCompanion.app/Contents/Resources/app.asar && rm -rf bin/YoutubeCompanion-darwin-x64/YoutubeCompanion.app/Contents/Resources/app"
+    "icons": "png2icons ./app/images/yt_logo_rgb_light.png ./app/images/favicon -all -bc -i"
   },
   "repository": {
     "type": "git",
@@ -22,15 +36,17 @@
     "companion",
     "client",
     "electron",
-    "always on top"
+    "always on top",
+    "browser"
   ],
   "author": "Bruno Araujo <bruno@lavaleakgames.com>",
   "license": "MIT",
   "homepage": "https://bitbucket.org/brunurd/youtube-client#readme",
   "devDependencies": {
-    "asar": "^0.14.2",
-    "electron": "^3.0.2",
-    "electron-packager": "^11.0.1",
+    "asar": "^0.14.5",
+    "electron": "^3.0.9",
+    "electron-builder": "^20.34.0",
     "png2icons": "^0.9.1"
-  }
+  },
+  "dependencies": {}
 }
