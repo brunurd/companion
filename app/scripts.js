@@ -94,8 +94,17 @@ const checkHistoryButtons = () => {
   }
 }
 
+const updateURL = () => {
+  if (document.activeElement === searchInput)
+  {
+    return
+  }
+  searchInput.value = webview.getURL()
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   window.setInterval(checkHistoryButtons, 1000)
+  window.setInterval(updateURL, 1000)
   searchForm.addEventListener('submit', e => {
     e.preventDefault()
     searchSubmitButton.click()
