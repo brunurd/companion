@@ -11,29 +11,39 @@
 </head>
 
 <body class="flex-container">
-  <div class="yt-client-bar">
-    <div class="yt-client-draggable drag"></div>
-    
+  <div class="yt-client-bar drag">
     <nav class="yt-client-m">
-      <span class="yt-client-m-btn click inactive">
-        <i class="fa fa-search-plus js-zoom"></i>
-      </span>
-      <span class="yt-client-m-btn click" onclick="pin()">
-        <i class="fa fa-unlock js-pin"></i>
-      </span>
-      <span class="yt-client-m-btn click" onclick="refresh()">
-        <i class="fa fa-refresh"></i>
-      </span>
-      <span class="yt-client-m-btn click" onclick="minimizeWindow()">
-        <i class="fa fa-arrow-down"></i>
-      </span>
-      <span class="yt-client-m-btn click" onclick="closeWindow()">
-        <i class="fa fa-times"></i>
-      </span>
+      <div class="yt-client-m-btns-left">
+        <span class="yt-client-m-btn click" onclick="pin()">
+          <i class="fa fa-unlock js-pin"></i>
+        </span>
+      </div>
+      <div class="yt-client-m-btns-right">
+        <span class="yt-client-m-btn click" onclick="minimizeWindow()">
+          <i class="fa fa-window-minimize"></i>
+        </span>
+        <span class="yt-client-m-btn click" onclick="maximizeToggle()">
+            <i class="fa fa-window-maximize"></i>
+          </span>
+        <span class="yt-client-m-btn click" onclick="closeWindow()">
+          <i class="fa fa-times"></i>
+        </span>
+      </div>
     </nav>
   </div>
 
   <form class="search-bar">
+    <nav class="search-bar-nav">
+      <span class="yt-client-m-btn click prev-btn inactive" onclick="prev()">
+        <i class="fa fa-arrow-left"></i>
+      </span>
+      <span class="yt-client-m-btn click refresh-btn inactive" onclick="refresh()">
+        <i class="fa fa-home"></i>
+      </span>
+      <span class="yt-client-m-btn click next-btn inactive" onclick="next()">
+        <i class="fa fa-arrow-right"></i>
+      </span>
+    </nav>
     <input id="search-input" class="search-bar-item" type="text" placeholder="Url here...">
     <button class="search-bar-item" type="submit" onclick="refresh(document.querySelector('#search-input').value)">Go</button>
   </form>

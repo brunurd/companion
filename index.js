@@ -21,7 +21,7 @@ const start = ()=> {
   WINDOW.loadURL('file://' + __dirname + '/app/index.html')
   WINDOW.on('closed', ()=> { window = null })
   if (process.argv[2] !== 'undefined') {
-    if (process.argv[2] === 'debug')
+    if (process.argv.includes('debug'))
       WINDOW.webContents.openDevTools()
   }
 }

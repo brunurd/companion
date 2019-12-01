@@ -31,6 +31,7 @@ a:hover, a:hover *, a *:hover {
 .inactive {
   opacity: 0.2;
   cursor: default;
+  pointer-events: none;
 }
 /* components */
 .flex-container {
@@ -44,42 +45,63 @@ a:hover, a:hover *, a *:hover {
   transition: height 0.5s ease 0s;
   transition: padding 0.25s ease 0s;
 }
-.yt-client-draggable {
-  width: calc(100% - 130px);
-  height: 15px;
-}
 .yt-webview {
   height: 100%;
   overflow: hidden;
 }
 .yt-client-m {
-  height: 15px;
-  position: fixed;
-  z-index: 2;
-  top: 5px;
-  right: 10px;
+  width: 100%;
+  height: 17px;
+  padding: 0 5px;
+}
+.yt-client-m > * {
+  -webkit-app-region: no-drag;
+}
+.yt-client-m-btns-left {
+  float: left;
+}
+.yt-client-m-btns-right {
+  float: right;
 }
 .yt-client-m-btn, .inactive.yt-client-m-btn:hover {
   font-size: 15px;
   margin-left: 10px;
   color: rgba(245,245,245,0.3);
 }
+.yt-client-m-btn:first-child {
+  margin-left: 0;
+}
 .yt-client-m-btn:hover {
   color: rgba(247,247,247,0.6);
 }
 .search-bar {
-  height: 40px;
+  height: 35px;
   width: 100%;
+  display: inherit;
   overflow: hidden;
+}
+.search-bar {
+  float: left;
+}
+.search-bar-nav {
+  background-color: rgb(60,60,60);
+  width: 70px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 .search-bar-item {
   height: 100%;
   position: relative;
 }
 .search-bar input {
-  width: calc(100% - 60px);
+  width: calc(100% - 130px);
   padding: 10px;
   float: left;
+  border: none;
+  border-bottom: 1px solid rgb(60,60,60);
 }
 .search-bar button {
   width: 60px;
@@ -88,5 +110,6 @@ a:hover, a:hover *, a *:hover {
   background-color: #33455a;
   border: none;
   color: #fff;
+  cursor: pointer;
 }
 

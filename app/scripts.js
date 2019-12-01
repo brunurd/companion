@@ -1,11 +1,15 @@
-const bar = document.querySelector('.yt-client-bar'),
-  remote = require('electron').remote,
-  WINDOW = remote.getCurrentWindow()
+const bar = document.querySelector('.yt-client-bar')
+const remote = require('electron').remote
+const WINDOW = remote.getCurrentWindow()
 
-let webview = document.querySelector('.yt-webview'),
-  searchForm = document.querySelector('.search-bar'),
-  searchInput = document.querySelector('#search-input'),
-  searchSubmitButton = document.querySelector('.search-bar-item')
+let webview = document.querySelector('.yt-webview')
+let searchForm = document.querySelector('.search-bar')
+let searchInput = document.querySelector('#search-input')
+let searchSubmitButton = document.querySelector('.search-bar-item')
+let prevBtn = document.querySelector('.prev-btn')
+let refreshBtn = document.querySelector('.refresh-btn')
+let nextBtn = document.querySelector('.next-btn')
+let maximized = false
 
 const hideBar = () => {
   bar.style.height = '0'
@@ -35,8 +39,18 @@ const minimizeWindow = () => {
   WINDOW.minimize()
 }
 
+const prev = () => {
+  webview.goBack()
+  nextBtn.classList.remove('inactive')
+}
+
+const next = () => {
+  webview.goForward()
+  prevBtn.classList.remove('inactive')
+}
+
 const refresh = (url) => {
-  if (typeof url === 'undefined')
+  if (typeof url === 'undefined' || url === '')
     url = 'https://m.youtube.com'
 
   if (!url.includes('http'))
@@ -55,7 +69,33 @@ const closeWindow = () => {
   WINDOW.close()
 }
 
+const maximizeToggle = () => {
+  if (maximized)
+  {
+    WINDOW.unmaximize()
+  } else {
+    WINDOW.maximize()
+  }
+  maximized = !maximized
+}
+
+const checkHistoryButtons = () => {
+  if (webview.canGoBack()) {
+    prevBtn.classList.remove('inactive')
+    refreshBtn.classList.remove('inactive')
+  } else {
+    prevBtn.classList.add('inactive')
+    refreshBtn.classList.add('inactive')
+  }
+  if (webview.canGoForward()) {
+    nextBtn.classList.remove('inactive')
+  } else {
+    nextBtn.classList.add('inactive')
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  window.setInterval(checkHistoryButtons, 1000)
   searchForm.addEventListener('submit', e => {
     e.preventDefault()
     searchSubmitButton.click()
