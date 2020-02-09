@@ -25,7 +25,9 @@
     "dist": "electron-builder",
     "start": "electron index",
     "debug": "electron index debug",
-    "icons": "png2icons ./app/images/yt_logo_rgb_light.png ./app/images/favicon -all -bc -i"
+    "icons": "png2icons ./app/images/yt_logo_rgb_light.png ./app/images/favicon -all -bc -i",
+    "lint": "eslint *.js app/*.js",
+    "lint-fix": "eslint *.js app/*.js --fix"
   },
   "repository": {
     "type": "git",
@@ -43,9 +45,10 @@
   "license": "MIT",
   "homepage": "https://bitbucket.org/brunurd/youtube-client#readme",
   "devDependencies": {
-    "asar": "^0.14.5",
-    "electron": "^3.0.9",
-    "electron-builder": "^20.34.0",
+    "asar": "^0.14.6",
+    "electron": "^3.1.13",
+    "electron-builder": "^20.44.4",
+    "eslint": "^6.8.0",
     "png2icons": "^0.9.1"
   },
   "dependencies": {}
