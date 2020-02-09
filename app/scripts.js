@@ -1,113 +1,84 @@
-const bar = document.querySelector(".yt-client-bar")
-const remote = require("electron").remote
-const WINDOW = remote.getCurrentWindow()
-
-let webview = document.querySelector(".yt-webview")
-let searchForm = document.querySelector(".search-bar")
-let searchInput = document.querySelector("#search-input")
-let searchSubmitButton = document.querySelector(".search-bar-item")
-let prevBtn = document.querySelector(".prev-btn")
-let refreshBtn = document.querySelector(".refresh-btn")
-let nextBtn = document.querySelector(".next-btn")
-let maximized = false
-
-const hideBar = () => {
-  bar.style.height = "0"
-  bar.style.padding = "0"
-}
-
-const showBar = () => {
-  bar.style.height = "30px"
-  bar.style.padding = "5px"
-}
-
-const pin = () => {
-  let icon = document.querySelector(".js-pin")
-  console.log(icon)
-  if (WINDOW.isAlwaysOnTop()) {
-    icon.classList.remove("fa-lock")
-    icon.classList.add("fa-unlock")
-    WINDOW.setAlwaysOnTop(false)
-  } else {
-    icon.classList.remove("fa-unlock")
-    icon.classList.add("fa-lock")
-    WINDOW.setAlwaysOnTop(true)
-  }
-}
-
-const minimizeWindow = () => {
-  WINDOW.minimize()
-}
-
-const prev = () => {
-  webview.goBack()
-  nextBtn.classList.remove("inactive")
-}
-
-const next = () => {
-  webview.goForward()
-  prevBtn.classList.remove("inactive")
-}
-
-const refresh = (url) => {
-  if (typeof url === "undefined" || url === "")
-    url = "https://m.youtube.com"
-
-  if (!url.includes("http"))
-    url = "https://" + url
-
-  searchInput.value = url
-
-  webview.remove()
-  webview = document.createElement("WEBVIEW")
-  webview.src = url
-  webview.classList.add("yt-webview")
-  document.body.appendChild(webview)
-}
-
-const closeWindow = () => {
-  WINDOW.close()
-}
-
-const maximizeToggle = () => {
-  if (maximized)
-  {
-    WINDOW.unmaximize()
-  } else {
-    WINDOW.maximize()
-  }
-  maximized = !maximized
-}
-
-const checkHistoryButtons = () => {
-  if (webview.canGoBack()) {
-    prevBtn.classList.remove("inactive")
-    refreshBtn.classList.remove("inactive")
-  } else {
-    prevBtn.classList.add("inactive")
-    refreshBtn.classList.add("inactive")
-  }
-  if (webview.canGoForward()) {
-    nextBtn.classList.remove("inactive")
-  } else {
-    nextBtn.classList.add("inactive")
-  }
-}
-
-const updateURL = () => {
-  if (document.activeElement === searchInput)
-  {
-    return
-  }
-  searchInput.value = webview.getURL()
-}
-
 document.addEventListener("DOMContentLoaded", () => {
+  let companion = window.__COMPANION__
+
+  let pinBtn = document.querySelector(".pin-btn")
+  let icon = document.querySelector(".js-pin")
+  let minimizeBtn = document.querySelector(".minimize-btn")
+  let maximizeBtn = document.querySelector(".maximize-btn")
+  let closeBtn = document.querySelector(".close-btn")
+  let prevBtn = document.querySelector(".prev-btn")
+  let homeBtn = document.querySelector(".home-btn")
+  let nextBtn = document.querySelector(".next-btn")
+  let webview = document.querySelector(".yt-webview")
+  let searchInput = document.querySelector("#search-input")
+  let searchSubmitBtn = document.querySelector(".search-submit-btn")
+  let searchBar = document.querySelector(".search-bar")
+
+  function refresh(url = "https://m.youtube.com") {
+    if (!url.includes("http")) {
+      url = "https://" + url
+    }
+
+    searchInput.value = url
+    webview.src = url
+  }
+
+  function checkHistoryButtons() {
+    if (webview.canGoBack()) {
+      prevBtn.classList.remove("inactive")
+      homeBtn.classList.remove("inactive")
+    } else {
+      prevBtn.classList.add("inactive")
+      homeBtn.classList.add("inactive")
+    }
+    if (webview.canGoForward()) {
+      nextBtn.classList.remove("inactive")
+    } else {
+      nextBtn.classList.add("inactive")
+    }
+  }
+
+  function updateURL() {
+    if (document.activeElement === searchInput) {
+      return
+    }
+    searchInput.value = webview.getURL()
+  }
+
+  pinBtn.addEventListener("click", () => {
+    companion.setAlwaysOnTop()
+    icon.classList.remove(companion.isAlwaysOnTop() ? "fa-unlock" : "fa-lock")
+    icon.classList.add(companion.isAlwaysOnTop() ? "fa-lock" : "fa-unlock")
+  })
+
+  minimizeBtn.addEventListener("click", companion.minimize)
+
+  maximizeBtn.addEventListener("click", companion.maximizeToggle)
+
+  closeBtn.addEventListener("click", companion.close)
+
+  prevBtn.addEventListener("click", () => {
+    webview.goBack()
+    nextBtn.classList.remove("inactive")
+  })
+
+  homeBtn.addEventListener("click", () => { refresh() })
+
+  nextBtn.addEventListener("click", () => {
+    webview.goForward()
+    prevBtn.classList.remove("inactive")
+  })
+
+  searchSubmitBtn.addEventListener("click", () => {
+    refresh(searchInput.value)
+  })
+
   window.setInterval(checkHistoryButtons, 1000)
   window.setInterval(updateURL, 1000)
-  searchForm.addEventListener("submit", e => {
+
+  searchBar.addEventListener("submit", (e) => {
     e.preventDefault()
-    searchSubmitButton.click()
+    searchSubmitBtn.click()
     return false
   })
 })
