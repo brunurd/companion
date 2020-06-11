@@ -15,3 +15,6 @@ yarn.lock
 
 # macOS
 .DS_Store
+
+# svelte
+/public/build/
