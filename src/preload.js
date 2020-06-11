@@ -51,4 +51,8 @@ window['__COMPANION__'] = {
     mousePosBefore = mousePos;
     return isIdle;
   },
+
+  isFullscreen: function () {
+    return win.isFullScreen();
+  },
 };

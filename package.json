@@ -1,6 +1,6 @@
 {
   "name": "youtube-companion-plus",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A client to watch youtube videos outside the browser and pin on top of everything.",
   "main": "public/main.min.js",
   "build": {

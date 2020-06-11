@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let prevBtn = document.querySelector('.prev-btn');
   let homeBtn = document.querySelector('.home-btn');
   let nextBtn = document.querySelector('.next-btn');
+  let webviewWrapper = document.querySelector('.webview');
   let webview = document.querySelector('.webview webview');
   let searchInput = document.querySelector('#search-input');
   let searchSubmitBtn = document.querySelector('.search-submit-btn');
@@ -50,17 +51,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const mouseIsInsideWindow = companion.insideWindow();
     const mouseIsIdle = companion.mouseIsIdle();
     const isHidden = appBar.classList.contains('app-bar--hidden');
+    const isFullscreen = companion.isFullscreen();
 
     if (!mouseIsInsideWindow && !isHidden) {
       appBar.classList.add('app-bar--hidden');
+      webviewWrapper.classList.add('webview--full');
     }
 
-    if (mouseIsIdle && !isHidden) {
+    if (mouseIsIdle && !isHidden && isFullscreen) {
       appBar.classList.add('app-bar--hidden');
+      webviewWrapper.classList.add('webview--full');
     }
 
     if (mouseIsInsideWindow && isHidden && !mouseIsIdle) {
       appBar.classList.remove('app-bar--hidden');
+      webviewWrapper.classList.remove('webview--full');
     }
   }
 
