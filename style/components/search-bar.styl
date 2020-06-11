@@ -5,7 +5,7 @@
   overflow: hidden;
   float: left;
 
-  &--nav {
+  &__nav {
     background-color: rgb(60, 60, 60);
     width: 70px;
     padding: 5px;
@@ -15,7 +15,7 @@
     align-items: center;
   }
 
-  &--item {
+  &__item {
     height: 100%;
     position: relative;
   }
@@ -25,7 +25,12 @@
     padding: 10px;
     float: left;
     border: none;
-    border-bottom: 1px solid rgb(60, 60, 60);
+    border-bottom: 1px solid rgb(220, 220, 220);
+    background-color: #fff;
+
+    &:focus {
+      background-color: #eee;
+    }
   }
 
   & button {
@@ -34,7 +39,11 @@
     z-index: 2;
     background-color: #33455a;
     border: none;
-    color: #fff;
     cursor: pointer;
+    color: #fff;
+
+    &:focus {
+      background-color: #223449;
+    }
   }
 }

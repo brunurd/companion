@@ -9,10 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let prevBtn = document.querySelector('.prev-btn');
   let homeBtn = document.querySelector('.home-btn');
   let nextBtn = document.querySelector('.next-btn');
-  let webview = document.querySelector('.yt-webview');
+  let webview = document.querySelector('.webview webview');
   let searchInput = document.querySelector('#search-input');
   let searchSubmitBtn = document.querySelector('.search-submit-btn');
   let searchBar = document.querySelector('.search-bar');
+  let appBar = document.querySelector('.app-bar');
 
   function refresh(url = 'https://m.youtube.com') {
     if (!url.includes('http')) {
@@ -43,6 +44,21 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     searchInput.value = webview.getURL();
+  }
+
+  function hideShowAppBar() {
+    const mouseIsInsideWindow = companion.insideWindow();
+    const mouseIsIdle = companion.mouseIsIdle();
+    console.log(mouseIsIdle);
+    const isHidden = appBar.classList.contains('app-bar--hidden');
+
+    if ((!mouseIsInsideWindow && !isHidden) || mouseIsIdle) {
+      appBar.classList.add('app-bar--hidden');
+    }
+
+    if (mouseIsInsideWindow && isHidden && !mouseIsIdle) {
+      appBar.classList.remove('app-bar--hidden');
+    }
   }
 
   pinBtn.addEventListener('click', () => {
@@ -77,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.setInterval(checkHistoryButtons, 1000);
   window.setInterval(updateURL, 1000);
+  window.setInterval(hideShowAppBar, 1000);
 
   searchBar.addEventListener('submit', (e) => {
     e.preventDefault();

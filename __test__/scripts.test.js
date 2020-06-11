@@ -5,7 +5,9 @@ describe('scripts test', () => {
   let html;
 
   beforeAll(() => {
-    html = fs.readFileSync(resolve(__dirname, '..', 'public', 'index.html')).toString();
+    html = fs
+      .readFileSync(resolve(__dirname, '..', 'public', 'index.html'))
+      .toString();
   });
 
   it('index.html file is loaded', () => {
