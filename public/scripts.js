@@ -49,10 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function hideShowAppBar() {
     const mouseIsInsideWindow = companion.insideWindow();
     const mouseIsIdle = companion.mouseIsIdle();
-    console.log(mouseIsIdle);
     const isHidden = appBar.classList.contains('app-bar--hidden');
 
-    if ((!mouseIsInsideWindow && !isHidden) || mouseIsIdle) {
+    if (!mouseIsInsideWindow && !isHidden) {
+      appBar.classList.add('app-bar--hidden');
+    }
+
+    if (mouseIsIdle && !isHidden) {
       appBar.classList.add('app-bar--hidden');
     }
 
@@ -93,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.setInterval(checkHistoryButtons, 1000);
   window.setInterval(updateURL, 1000);
-  window.setInterval(hideShowAppBar, 1000);
+  window.setInterval(hideShowAppBar, 2000);
 
   searchBar.addEventListener('submit', (e) => {
     e.preventDefault();
