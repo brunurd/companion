@@ -47,21 +47,25 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.value = webview.getURL();
   }
 
-  function hideShowAppBar() {
+  function hideAppBar() {
     const mouseIsInsideWindow = companion.insideWindow();
     const mouseIsIdle = companion.mouseIsIdle();
     const isHidden = appBar.classList.contains('app-bar--hidden');
     const isFullscreen = companion.isFullscreen();
 
-    if (!mouseIsInsideWindow && !isHidden) {
+    if (
+      (!mouseIsInsideWindow && !isHidden) ||
+      (mouseIsIdle && !isHidden && isFullscreen)
+    ) {
       appBar.classList.add('app-bar--hidden');
       webviewWrapper.classList.add('webview--full');
     }
+  }
 
-    if (mouseIsIdle && !isHidden && isFullscreen) {
-      appBar.classList.add('app-bar--hidden');
-      webviewWrapper.classList.add('webview--full');
-    }
+  function showAppBar() {
+    const mouseIsInsideWindow = companion.insideWindow();
+    const mouseIsIdle = companion.mouseIsIdle();
+    const isHidden = appBar.classList.contains('app-bar--hidden');
 
     if (mouseIsInsideWindow && isHidden && !mouseIsIdle) {
       appBar.classList.remove('app-bar--hidden');
@@ -101,7 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.setInterval(checkHistoryButtons, 1000);
   window.setInterval(updateURL, 1000);
-  window.setInterval(hideShowAppBar, 1000);
+  window.setInterval(showAppBar, 1000);
+  window.setInterval(hideAppBar, 2000);
 
   searchBar.addEventListener('submit', (e) => {
     e.preventDefault();

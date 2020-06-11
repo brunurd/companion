@@ -11,7 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - Fix: hide app bar on mouse idle only in fullscreen.
-- Chore: Time to hide the app bar (2s to -> 1s).
+- Fix: different functions and timers for hide and show app bar.
 - Fix: Quit app in macOS on window close.
 
 ---
