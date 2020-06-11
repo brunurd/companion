@@ -44,12 +44,6 @@ const start = () => {
   if (debug) win.webContents.openDevTools();
 };
 
-const macOSXClose = () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-};
-
 const preventReOpen = () => {
   if (win === null) {
     start();
@@ -57,5 +51,4 @@ const preventReOpen = () => {
 };
 
 app.on('ready', start);
-app.on('window-all-closed', macOSXClose);
 app.on('activate', preventReOpen);

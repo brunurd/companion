@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.setInterval(checkHistoryButtons, 1000);
   window.setInterval(updateURL, 1000);
-  window.setInterval(hideShowAppBar, 2000);
+  window.setInterval(hideShowAppBar, 1000);
 
   searchBar.addEventListener('submit', (e) => {
     e.preventDefault();
