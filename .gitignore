@@ -12,3 +12,6 @@
 
 # npm first
 yarn.lock
+
+# macOS
+.DS_Store
