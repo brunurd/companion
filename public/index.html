@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self';" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Companion</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.min.css" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -17,19 +17,19 @@
     <main id="app">
       <div class="yt-client-bar">
         <nav class="yt-client-m drag">
-          <div class="yt-client-m-btns-left">
-            <span class="yt-client-m-btn click pin-btn">
+          <div class="yt-client-m--btns__left">
+            <span class="yt-client-m--btn click pin-btn">
               <i class="fa fa-unlock js-pin"></i>
             </span>
           </div>
-          <div class="yt-client-m-btns-right">
-            <span class="yt-client-m-btn click minimize-btn">
+          <div class="yt-client-m--btns__right">
+            <span class="yt-client-m--btn click minimize-btn">
               <i class="fa fa-window-minimize"></i>
             </span>
-            <span class="yt-client-m-btn click maximize-btn">
+            <span class="yt-client-m--btn click maximize-btn">
               <i class="fa fa-window-maximize"></i>
             </span>
-            <span class="yt-client-m-btn click close-btn">
+            <span class="yt-client-m--btn click close-btn">
               <i class="fa fa-times"></i>
             </span>
           </div>
@@ -37,24 +37,24 @@
       </div>
 
       <form class="search-bar">
-        <nav class="search-bar-nav">
-          <span class="yt-client-m-btn click prev-btn inactive prev-btn">
+        <nav class="search-bar--nav">
+          <span class="yt-client-m--btn click prev-btn inactive prev-btn">
             <i class="fa fa-arrow-left"></i>
           </span>
-          <span class="yt-client-m-btn click refresh-btn inactive home-btn">
+          <span class="yt-client-m--btn click refresh-btn inactive home-btn">
             <i class="fa fa-home"></i>
           </span>
-          <span class="yt-client-m-btn click next-btn inactive next-btn">
+          <span class="yt-client-m--btn click next-btn inactive next-btn">
             <i class="fa fa-arrow-right"></i>
           </span>
         </nav>
         <input
           id="search-input"
-          class="search-bar-item"
+          class="search-bar--item"
           type="text"
           placeholder="Url here..."
         />
-        <button class="search-bar-item search-submit-btn" type="submit">
+        <button class="search-bar--item search-submit-btn" type="submit">
           Go
         </button>
       </form>

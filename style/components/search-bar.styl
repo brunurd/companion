@@ -1,0 +1,40 @@
+.search-bar {
+  height: 35px;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  float: left;
+
+  &--nav {
+    background-color: rgb(60, 60, 60);
+    width: 70px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  &--item {
+    height: 100%;
+    position: relative;
+  }
+
+  & input {
+    width: calc(100% - 130px);
+    padding: 10px;
+    float: left;
+    border: none;
+    border-bottom: 1px solid rgb(60, 60, 60);
+  }
+
+  & button {
+    width: 60px;
+    float: right;
+    z-index: 2;
+    background-color: #33455a;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+}

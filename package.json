@@ -39,15 +39,17 @@
     "postinstall": "install-app-deps",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "start": "concurrently \"rollup -cw\" \"sleep 3 && npm run debug\"",
+    "start": "concurrently \"npm run css:watch\" \"rollup -cw\" \"sleep 3 && npm run debug\"",
     "build": "rollup -c",
     "electron": "electron .",
     "debug": "electron . debug",
     "icons": "png2icons ./public/images/yt_logo_rgb_light.png ./public/images/favicon -all -bc -i",
     "lint": "eslint *.js public/*.js",
-    "lint-fix": "eslint *.js public/*.js --fix",
+    "lint:fix": "eslint *.js public/*.js --fix",
     "prettier": "prettier --write .",
-    "test": "jest"
+    "test": "jest",
+    "css": "stylus style/main.styl --out public/style.min.css",
+    "css:watch": "stylus style/main.styl --out public/style.min.css --watch"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.9.0",
@@ -59,7 +61,8 @@
     "png2icons": "^2.0.1",
     "prettier": "2.0.5",
     "rollup": "^2.15.0",
-    "rollup-plugin-terser": "^6.1.0"
+    "rollup-plugin-terser": "^6.1.0",
+    "stylus": "^0.54.7"
   },
   "dependencies": {
     "electron": "^9.0.3"
