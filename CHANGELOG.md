@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+---
+
+## [1.4.1] - 2020-06-11
+
+### Changed
+
+- Fix: hide app bar on mouse idle only in fullscreen.
+- Fix: different functions and timers for hide and show app bar.
+- Fix: Quit app in macOS on window close.
+
+---
+
 ## [1.4.0] - 2020-06-10
 
 ### Added

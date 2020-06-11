@@ -1,6 +1,6 @@
 {
   "name": "youtube-companion-plus",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A client to watch youtube videos outside the browser and pin on top of everything.",
   "main": "public/main.min.js",
   "build": {
@@ -36,25 +36,26 @@
   "license": "MIT",
   "homepage": "https://bitbucket.org/brunurd/youtube-client#readme",
   "scripts": {
-    "postinstall": "install-app-deps",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder --win --x64 && electron-builder --mac --x64 && electron-builder --linux --x64",
     "start": "concurrently \"npm run css:watch\" \"rollup -cw\" \"sleep 3 && npm run debug\"",
     "build": "rollup -c",
     "electron": "electron .",
     "debug": "electron . debug",
-    "icons": "png2icons ./public/images/yt_logo_rgb_light.png ./public/images/favicon -all -bc -i",
-    "lint": "eslint *.js public/*.js",
-    "lint:fix": "eslint *.js public/*.js --fix",
-    "prettier": "prettier --write .",
     "test": "jest",
+    "lint": "eslint src/*.js public/scripts.js",
+    "lint:fix": "eslint src/*.js public/scripts.js --fix",
+    "prettier": "prettier --write .",
     "css": "stylus style/main.styl --out public/style.min.css",
-    "css:watch": "stylus style/main.styl --out public/style.min.css --watch"
+    "css:watch": "stylus style/main.styl --out public/style.min.css --watch",
+    "icons": "png2icons ./public/images/yt_logo_rgb_light.png ./public/images/favicon -all -bc -i",
+    "pack": "electron-builder",
+    "pack:dir": "electron-builder --dir",
+    "dist": "electron-builder --win --x64 && electron-builder --mac --x64 && electron-builder --linux --x64",
+    "postinstall": "install-app-deps"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.9.0",
     "concurrently": "^5.2.0",
-    "electron": "^9.0.3",
+    "electron": "9.0.3",
     "electron-builder": "^22.7.0",
     "electron-reload": "^1.5.0",
     "eslint": "^7.2.0",

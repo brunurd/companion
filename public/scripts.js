@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let prevBtn = document.querySelector('.prev-btn');
   let homeBtn = document.querySelector('.home-btn');
   let nextBtn = document.querySelector('.next-btn');
+  let webviewWrapper = document.querySelector('.webview');
   let webview = document.querySelector('.webview webview');
   let searchInput = document.querySelector('#search-input');
   let searchSubmitBtn = document.querySelector('.search-submit-btn');
@@ -46,21 +47,29 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.value = webview.getURL();
   }
 
-  function hideShowAppBar() {
+  function hideAppBar() {
+    const mouseIsInsideWindow = companion.insideWindow();
+    const mouseIsIdle = companion.mouseIsIdle();
+    const isHidden = appBar.classList.contains('app-bar--hidden');
+    const isFullscreen = companion.isFullscreen();
+
+    if (
+      (!mouseIsInsideWindow && !isHidden) ||
+      (mouseIsIdle && !isHidden && isFullscreen)
+    ) {
+      appBar.classList.add('app-bar--hidden');
+      webviewWrapper.classList.add('webview--full');
+    }
+  }
+
+  function showAppBar() {
     const mouseIsInsideWindow = companion.insideWindow();
     const mouseIsIdle = companion.mouseIsIdle();
     const isHidden = appBar.classList.contains('app-bar--hidden');
 
-    if (!mouseIsInsideWindow && !isHidden) {
-      appBar.classList.add('app-bar--hidden');
-    }
-
-    if (mouseIsIdle && !isHidden) {
-      appBar.classList.add('app-bar--hidden');
-    }
-
     if (mouseIsInsideWindow && isHidden && !mouseIsIdle) {
       appBar.classList.remove('app-bar--hidden');
+      webviewWrapper.classList.remove('webview--full');
     }
   }
 
@@ -96,7 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.setInterval(checkHistoryButtons, 1000);
   window.setInterval(updateURL, 1000);
-  window.setInterval(hideShowAppBar, 2000);
+  window.setInterval(showAppBar, 1000);
+  window.setInterval(hideAppBar, 2000);
 
   searchBar.addEventListener('submit', (e) => {
     e.preventDefault();
