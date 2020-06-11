@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Companion</title>
+    <link rel="stylesheet" href="style.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <main class="app-bar">
+      <div class="client-bar">
+        <nav class="client-m drag">
+          <div class="client-m__btns--left">
+            <span class="client-m__btn click pin-btn">
+              <i class="fa fa-unlock js-pin"></i>
+            </span>
+          </div>
+          <div class="client-m__btns--right">
+            <span class="client-m__btn click minimize-btn">
+              <i class="fa fa-window-minimize"></i>
+            </span>
+            <span class="client-m__btn click maximize-btn">
+              <i class="fa fa-window-maximize"></i>
+            </span>
+            <span class="client-m__btn click close-btn">
+              <i class="fa fa-times"></i>
+            </span>
+          </div>
+        </nav>
+      </div>
+
+      <form class="search-bar">
+        <nav class="search-bar__nav">
+          <span class="client-m__btn click prev-btn inactive prev-btn">
+            <i class="fa fa-arrow-left"></i>
+          </span>
+          <span class="client-m__btn click refresh-btn inactive home-btn">
+            <i class="fa fa-home"></i>
+          </span>
+          <span class="client-m__btn click next-btn inactive next-btn">
+            <i class="fa fa-arrow-right"></i>
+          </span>
+        </nav>
+        <input
+          id="search-input"
+          class="search-bar__item"
+          type="text"
+          placeholder="Url here..."
+        />
+        <button class="search-bar__item search-submit-btn" type="submit">
+          Go
+        </button>
+      </form>
+    </main>
+
+    <div class="webview">
+      <webview src="https://m.youtube.com"></webview>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

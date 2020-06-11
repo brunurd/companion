@@ -1,0 +1,33 @@
+.client-m {
+  width: 100%;
+  height: 17px;
+  padding: 0 5px;
+
+  & > * {
+    -webkit-app-region: no-drag;
+  }
+
+  &__btns{
+    &--left {
+      float: left;
+    }
+
+    &--right {
+      float: right;
+    }
+  }
+
+  &__btn, &__btn:hover.inactive {
+    font-size: 15px;
+    margin-left: 10px;
+    color: rgba(245, 245, 245, 0.3);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover {
+      color: rgba(247, 247, 247, 0.6);
+    }
+  }
+}

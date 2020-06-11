@@ -1,7 +1,12 @@
 # Youtube Companion Plus
 
+![license][license-badge]
+![npm-version][npm-version]
 
-A client to watch youtube videos (plus: or any website) outside the browser and pin on top of everything (always on top).  
+A client to watch youtube videos (plus: or any website) outside the browser and pin on top of everything (always on top).
 
+![Screenshot][screenshot]
 
-![Screenshot](https://raw.githubusercontent.com/brunurd/youtube-companion/master/app/images/screenshot.jpg)
+[screenshot]: public/images/screenshot.jpg
+[license-badge]: https://img.shields.io/github/license/brunurd/youtube-companion-plus
+[npm-version]: https://img.shields.io/github/package-json/v/brunurd/youtube-companion-plus

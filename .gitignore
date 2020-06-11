@@ -1,3 +1,14 @@
-/[Nn]ode_modules/
+# Node.js
+/node_modules/
+
+# Build folders
 /[Bb]in/
 /[Dd]ist/
+
+# Build files
+/public/main.min.js
+/public/preload.min.js
+/public/style.min.css
+
+# npm first
+yarn.lock
