@@ -8,8 +8,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [1.?.?] - ???
 
+### Added
+
 - Feat: Svelte rollup build setup.
 - Feat: html moved to svelte components.
+
+### Changed
+
+- fix: Always hide app bar in the fullscreen.
+- fix: 1s inside the window to show app bar.
+- fix: 3s out of the window to hide app bar.
 
 ---
 
