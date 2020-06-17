@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [1.?.?] - ???
+## [1.6.0] - ???
 
 ### Added
 
@@ -15,10 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - Separate the source by it electron process, main in `src/main` and `src/renderer`.
-
-### Removed
-
-- ?
+- Style: moving css to components.
 
 ---
 

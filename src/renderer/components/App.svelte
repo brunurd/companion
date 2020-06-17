@@ -1,46 +1,48 @@
 <script>
-  import { onDestroy } from 'svelte';
-  import AppBar from './AppBar.svelte';
-  import WebView from './WebView.svelte';
 
-  let appBarIsShowing = true;
+import { onDestroy } from 'svelte';
+import AppBar from './AppBar.svelte';
+import WebView from './WebView.svelte';
 
-  const companion = window.__COMPANION__;
-  const showAppBarInterval = setInterval(showAppBar, 1000);
-  const hideAppBarInterval = setInterval(hideAppBar, 3000);
+let appBarIsShowing = true;
 
-  onDestroy(() => {
-    clearInterval(showAppBarInterval);
-    clearInterval(hideAppBarInterval);
-  });
+const companion = window.__COMPANION__;
+const showAppBarInterval = setInterval(showAppBar, 1000);
+const hideAppBarInterval = setInterval(hideAppBar, 3000);
 
-  function hideAppBar() {
-    const mouseIsInsideWindow = companion.insideWindow();
-    const isFullscreen = companion.isFullscreen();
+onDestroy(() => {
+  clearInterval(showAppBarInterval);
+  clearInterval(hideAppBarInterval);
+});
 
-    if ((!mouseIsInsideWindow && appBarIsShowing) || isFullscreen) {
-      appBarIsShowing = false;
-    }
+function hideAppBar() {
+  const mouseIsInsideWindow = companion.insideWindow();
+  const isFullscreen = companion.isFullscreen();
+
+  if ((!mouseIsInsideWindow && appBarIsShowing) || isFullscreen) {
+    appBarIsShowing = false;
   }
+}
 
-  function showAppBar() {
-    const mouseIsInsideWindow = companion.insideWindow();
-    const mouseIsIdle = companion.mouseIsIdle();
-    const isFullscreen = companion.isFullscreen();
+function showAppBar() {
+  const mouseIsInsideWindow = companion.insideWindow();
+  const mouseIsIdle = companion.mouseIsIdle();
+  const isFullscreen = companion.isFullscreen();
 
-    if ((mouseIsInsideWindow && !appBarIsShowing && !mouseIsIdle) && !isFullscreen) {
-      appBarIsShowing = true;
-    }
+  if ((mouseIsInsideWindow && !appBarIsShowing && !mouseIsIdle) && !isFullscreen) {
+    appBarIsShowing = true;
   }
+}
+
 </script>
 
-<main>
+<main class="app">
   <AppBar show={appBarIsShowing} />
   <WebView expand={!appBarIsShowing} />
 </main>
 
 <style>
-  main {
-    height: 100%;
-  }
+.app {
+  height: 100%;
+}
 </style>

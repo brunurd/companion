@@ -36,7 +36,7 @@
   "license": "MIT",
   "homepage": "https://bitbucket.org/brunurd/youtube-client#readme",
   "scripts": {
-    "start": "concurrently \"npm run css:watch\" \"rollup -cw\" \"sleep 3 && npm run debug\"",
+    "start": "concurrently \"rollup -cw\" \"sleep 3 && npm run debug\"",
     "build": "rollup -c",
     "electron": "electron .",
     "debug": "electron . debug",
@@ -44,8 +44,6 @@
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint src/**/*.js --fix",
     "prettier": "prettier --write .",
-    "css": "stylus style/main.styl --out public/style.min.css",
-    "css:watch": "stylus style/main.styl --out public/style.min.css --watch",
     "icons": "png2icons ./public/images/yt_logo_rgb_light.png ./public/images/favicon -all -bc -i",
     "pack": "electron-builder",
     "pack:dir": "electron-builder --dir",
