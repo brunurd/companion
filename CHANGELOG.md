@@ -19,6 +19,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - fix: 1s inside the window to show app bar.
 - fix: 3s out of the window to hide app bar.
 
+### Removed
+
+- removing scripts.js from document.
+
 ---
 
 ## [1.4.1] - 2020-06-11

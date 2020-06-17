@@ -6,46 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let minimizeBtn = document.querySelector('.minimize-btn');
   let maximizeBtn = document.querySelector('.maximize-btn');
   let closeBtn = document.querySelector('.close-btn');
-  let prevBtn = document.querySelector('.prev-btn');
-  let homeBtn = document.querySelector('.home-btn');
-  let nextBtn = document.querySelector('.next-btn');
   let webviewWrapper = document.querySelector('.webview');
-  let webview = document.querySelector('.webview webview');
-  let searchInput = document.querySelector('#search-input');
-  let searchSubmitBtn = document.querySelector('.search-submit-btn');
-  let searchBar = document.querySelector('.search-bar');
   let appBar = document.querySelector('.app-bar');
-
-  function refresh(url = 'https://m.youtube.com') {
-    if (!url.includes('http')) {
-      url = 'https://' + url;
-    }
-
-    searchInput.value = url;
-    webview.src = url;
-  }
-
-  function checkHistoryButtons() {
-    if (webview.canGoBack()) {
-      prevBtn.classList.remove('inactive');
-      homeBtn.classList.remove('inactive');
-    } else {
-      prevBtn.classList.add('inactive');
-      homeBtn.classList.add('inactive');
-    }
-    if (webview.canGoForward()) {
-      nextBtn.classList.remove('inactive');
-    } else {
-      nextBtn.classList.add('inactive');
-    }
-  }
-
-  function updateURL() {
-    if (document.activeElement === searchInput) {
-      return;
-    }
-    searchInput.value = webview.getURL();
-  }
 
   function hideAppBar() {
     const mouseIsInsideWindow = companion.insideWindow();
@@ -82,32 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   closeBtn.addEventListener('click', companion.close);
 
-  prevBtn.addEventListener('click', () => {
-    webview.goBack();
-    nextBtn.classList.remove('inactive');
-  });
-
-  homeBtn.addEventListener('click', () => {
-    refresh();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    webview.goForward();
-    prevBtn.classList.remove('inactive');
-  });
-
-  searchSubmitBtn.addEventListener('click', () => {
-    refresh(searchInput.value);
-  });
-
-  window.setInterval(checkHistoryButtons, 1000);
-  window.setInterval(updateURL, 1000);
   window.setInterval(showAppBar, 1000);
   window.setInterval(hideAppBar, 3000);
-
-  searchBar.addEventListener('submit', (e) => {
-    e.preventDefault();
-    searchSubmitBtn.click();
-    return false;
-  });
 });
