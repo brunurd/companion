@@ -1,6 +1,6 @@
 {
   "name": "youtube-companion-plus",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "A client to watch youtube videos outside the browser and pin on top of everything.",
   "main": "public/main.min.js",
   "build": {
@@ -41,8 +41,8 @@
     "electron": "electron .",
     "debug": "electron . debug",
     "test": "jest",
-    "lint": "eslint src/*.js public/scripts.js",
-    "lint:fix": "eslint src/*.js public/scripts.js --fix",
+    "lint": "eslint src/*.js",
+    "lint:fix": "eslint src/*.js --fix",
     "prettier": "prettier --write .",
     "css": "stylus style/main.styl --out public/style.min.css",
     "css:watch": "stylus style/main.styl --out public/style.min.css --watch",
