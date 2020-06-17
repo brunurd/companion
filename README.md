@@ -17,4 +17,3 @@ A client to watch youtube videos (plus: or any website) outside the browser and 
 [linux-download]: https://github.com/brunurd/youtube-companion-plus/releases/download/v1.4.1/Youtube.Companion.Plus-1.4.1.AppImage
 [mac-download]: https://github.com/brunurd/youtube-companion-plus/releases/download/v1.4.1/Youtube.Companion.Plus-1.4.1.dmg
 [win-download]: https://github.com/brunurd/youtube-companion-plus/releases/download/v1.4.1/Youtube.Companion.Plus.1.4.1.exe
-

@@ -6,6 +6,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.5.0] - 2020-06-16
+
+### Added
+
+- Svelte rollup build setup.
+- HTML moved to svelte components.
+- SearchBar component js.
+- Svelte store with url and webview reference.
+- WebView component js.
+- Show and hide logic moved to App component.
+- ClientBar component js.
+
+### Changed
+
+- fix: Always hide app bar in the fullscreen.
+- fix: 1s inside the window to show app bar.
+- fix: 3s out of the window to hide app bar.
+
+### Removed
+
+- removing scripts.js from document.
+- scripts.js deleted.
+
+---
+
 ## [1.4.1] - 2020-06-11
 
 ### Changed
