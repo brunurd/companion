@@ -1,5 +1,5 @@
 <script>
-  import { url, webview } from './store.js';
+  import { url, webview } from '../store.js';
 
   export let expand;
 </script>

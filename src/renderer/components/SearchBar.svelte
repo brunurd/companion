@@ -1,6 +1,6 @@
 <script>
   import { onDestroy } from 'svelte';
-  import { url, webview } from './store.js';
+  import { url, webview } from '../store.js';
 
   let localUrl;
   let nextBtn;
