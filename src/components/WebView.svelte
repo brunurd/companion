@@ -1,3 +1,11 @@
+<script>
+  import { url, webview } from './store.js';
+</script>
+
 <div class="webview">
-  <webview src="https://m.youtube.com"></webview>
+  <webview 
+    bind:this={$webview}
+    src={$url}
+  >
+  </webview>
 </div>

@@ -10,8 +10,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
-- Feat: Svelte rollup build setup.
-- Feat: html moved to svelte components.
+- Svelte rollup build setup.
+- HTML moved to svelte components.
+- SearchBar component js.
+- Svelte store with url and webview reference.
+- WebView component js.
 
 ### Changed
 
