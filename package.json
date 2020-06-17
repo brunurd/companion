@@ -41,8 +41,8 @@
     "electron": "electron .",
     "debug": "electron . debug",
     "test": "jest",
-    "lint": "eslint src/*.js",
-    "lint:fix": "eslint src/*.js --fix",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
     "prettier": "prettier --write .",
     "css": "stylus style/main.styl --out public/style.min.css",
     "css:watch": "stylus style/main.styl --out public/style.min.css --watch",
@@ -75,7 +75,8 @@
     "sirv-cli": "^1.0.0",
     "stylus": "^0.54.7",
     "svelte": "^3.23.2",
-    "svelte-jester": "^1.0.6"
+    "svelte-jester": "^1.0.6",
+    "svelte-preprocess": "^3.9.8"
   },
   "dependencies": {}
 }
