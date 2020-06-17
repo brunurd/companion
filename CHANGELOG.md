@@ -6,16 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [1.6.0] - ???
+## [1.5.1] - 2020-06-17
 
 ### Added
 
 - `svelte-preprocess` added.
+- WebStorm JetBrains `.idea/` folder.
 
 ### Changed
 
 - Separate the source by it electron process, main in `src/main` and `src/renderer`.
 - Style: moving css to components.
+- Stop remote warning.
 
 ---
 

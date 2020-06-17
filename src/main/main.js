@@ -25,6 +25,7 @@ const start = () => {
       nodeIntegration: false,
       preload: __dirname + '/preload.min.js',
       webviewTag: true,
+      enableRemoteModule: true,
     },
   });
 
