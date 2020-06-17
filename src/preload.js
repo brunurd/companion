@@ -21,6 +21,10 @@ window['__COMPANION__'] = {
     win.close();
   },
 
+  isMaximized: function () {
+    return win.isMaximized();
+  },
+
   maximizeToggle: function () {
     let maximized = win.isMaximized();
     if (maximized) {

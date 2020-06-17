@@ -15,6 +15,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - SearchBar component js.
 - Svelte store with url and webview reference.
 - WebView component js.
+- Show and hide logic moved to App component.
+- ClientBar component js.
 
 ### Changed
 
@@ -25,6 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Removed
 
 - removing scripts.js from document.
+- scripts.js deleted.
 
 ---
 
