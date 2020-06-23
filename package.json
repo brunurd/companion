@@ -46,7 +46,7 @@
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint src/**/*.js --fix",
     "prettier": "prettier --write .",
-    "icons": "png2icons ./public/images/yt_logo_rgb_light.png ./public/images/favicon -all -bc -i",
+    "icons": "png2icons ./public/images/compy.png ./public/images/favicon -all -bc -i",
     "pack": "electron-builder",
     "pack:dir": "electron-builder --dir",
     "dist": "electron-builder --win --x64 && electron-builder --mac --x64 && electron-builder --linux --x64",
