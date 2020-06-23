@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "companion",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "A client to watch videos mainly youtube and twitch, but can access any website, outside the browser and pin on top of everything (always on top).",
   "main": "public/main.min.js",
   "build": {
