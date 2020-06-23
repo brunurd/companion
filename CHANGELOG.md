@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.5.2] - 2020-06-23
+
+### Added
+
+- Use localStorage to restore the last visited url.
+
+### Changed
+
+- Project renamed to `companion`.
+- Compy as project icon.
+
+---
+
 ## [1.5.1] - 2020-06-17
 
 ### Added

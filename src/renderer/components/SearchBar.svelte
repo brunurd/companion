@@ -23,6 +23,7 @@ function refresh() {
     localUrl = 'https://' + localUrl;
   }
   url.set(localUrl);
+  localStorage.setItem('url', localUrl);
 }
 
 function formSubmitHandle(e) {
@@ -65,7 +66,9 @@ function updateURL() {
   if (document.activeElement === searchInput) {
     return;
   }
-  searchInput.value = $webview.getURL();
+  const webviewUrl = $webview.getURL();
+  searchInput.value = webviewUrl;
+  localStorage.setItem('url', webviewUrl);
 }
 
 </script>

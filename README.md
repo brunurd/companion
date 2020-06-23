@@ -1,9 +1,9 @@
-# Youtube Companion Plus
+# Companion
 
 ![license][license-badge]
 ![npm-version][npm-version]
 
-A client to watch youtube videos (plus: or any website) outside the browser and pin on top of everything (always on top).
+A client to watch videos mainly youtube and twitch, but can access any website, outside the browser and pin on top of everything (always on top).
 
 ## Downloads
 
@@ -12,8 +12,8 @@ A client to watch youtube videos (plus: or any website) outside the browser and 
 ![Screenshot][screenshot]
 
 [screenshot]: public/images/screenshot.jpg
-[license-badge]: https://img.shields.io/github/license/brunurd/youtube-companion-plus
-[npm-version]: https://img.shields.io/github/package-json/v/brunurd/youtube-companion-plus
-[linux-download]: https://github.com/brunurd/youtube-companion-plus/releases/download/v1.5.0/Youtube.Companion.Plus-1.5.0.AppImage
-[mac-download]: https://github.com/brunurd/youtube-companion-plus/releases/download/v1.5.0/Youtube.Companion.Plus-1.5.0.dmg
-[win-download]: https://github.com/brunurd/youtube-companion-plus/releases/download/v1.5.0/Youtube.Companion.Plus.1.5.0.exe
+[license-badge]: https://img.shields.io/github/license/brunurd/companion
+[npm-version]: https://img.shields.io/github/package-json/v/brunurd/companion
+[linux-download]: https://github.com/brunurd/companion/releases/download/v1.5.0/Youtube.Companion.Plus-1.5.0.AppImage
+[mac-download]: https://github.com/brunurd/companion/releases/download/v1.5.0/Youtube.Companion.Plus-1.5.0.dmg
+[win-download]: https://github.com/brunurd/companion/releases/download/v1.5.0/Youtube.Companion.Plus.1.5.0.exe

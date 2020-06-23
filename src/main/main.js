@@ -19,7 +19,7 @@ const start = () => {
   win = new BrowserWindow({
     width: 500,
     height: 450,
-    icon: __dirname + '/images/yt_logo_rgb_light.png',
+    icon: __dirname + '/images/compy.png',
     frame: false,
     webPreferences: {
       nodeIntegration: false,
