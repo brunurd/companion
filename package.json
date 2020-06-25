@@ -43,9 +43,9 @@
     "electron": "electron .",
     "debug": "electron . debug",
     "test": "jest",
-    "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint src/**/*.js --fix",
-    "prettier": "prettier --write .",
+    "test:coverage": "jest --coverage --watchAll=false",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "icons": "png2icons ./public/images/compy.png ./public/images/favicon -all -bc -i",
     "pack": "electron-builder",
     "pack:dir": "electron-builder --dir",
@@ -53,21 +53,21 @@
     "postinstall": "install-app-deps"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
     "@rollup/plugin-commonjs": "^13.0.0",
     "@rollup/plugin-node-resolve": "^8.0.1",
     "@testing-library/jest-dom": "^5.10.0",
     "@testing-library/svelte": "^3.0.0",
-    "babel-jest": "^26.0.1",
+    "babel-jest": "^26.1.0",
     "concurrently": "^5.2.0",
     "electron": "9.0.3",
     "electron-builder": "^22.7.0",
     "electron-reload": "^1.5.0",
     "eslint": "^7.2.0",
-    "jest": "^26.0.1",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "jest": "^26.1.0",
     "png2icons": "^2.0.1",
-    "prettier": "2.0.5",
     "rollup": "^2.15.0",
     "rollup-plugin-livereload": "^1.3.0",
     "rollup-plugin-svelte": "^5.2.2",
@@ -78,5 +78,10 @@
     "svelte-jester": "^1.0.6",
     "svelte-preprocess": "^3.9.8"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  }
 }

@@ -1,6 +1,6 @@
 <script>
 
-import IconButton from "./IconButton.svelte";
+import IconButton from './IconButton.svelte';
 
 const companion = window.__COMPANION__;
 

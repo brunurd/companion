@@ -29,7 +29,8 @@ function showAppBar() {
   const mouseIsIdle = companion.mouseIsIdle();
   const isFullscreen = companion.isFullscreen();
 
-  if ((mouseIsInsideWindow && !appBarIsShowing && !mouseIsIdle) && !isFullscreen) {
+  if ((mouseIsInsideWindow && !appBarIsShowing && !mouseIsIdle) 
+    && !isFullscreen) {
     appBarIsShowing = true;
   }
 }

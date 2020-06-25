@@ -2,7 +2,7 @@
 
 import { onDestroy } from 'svelte';
 import { url, webview } from '../store.js';
-import IconButton from "./IconButton.svelte";
+import IconButton from './IconButton.svelte';
 
 let localUrl;
 let searchInput;
