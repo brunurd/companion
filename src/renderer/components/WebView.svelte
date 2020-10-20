@@ -10,6 +10,7 @@ export let expand;
   <webview 
     bind:this={$webview}
     src={$url}
+    allowpopups
   >
   </webview>
 </div>

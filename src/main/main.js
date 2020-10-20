@@ -26,6 +26,8 @@ const start = () => {
       preload: __dirname + '/preload.min.js',
       webviewTag: true,
       enableRemoteModule: true,
+      worldSafeExecuteJavaScript: true,
+      nativeWindowOpen: true,
     },
   });
 

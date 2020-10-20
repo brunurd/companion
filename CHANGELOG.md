@@ -6,10 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.5.3] - 2020-10-20
+
 ### Changed
 
 - Eslint config.
 - Jest config.
+- Allow pop ups.
 
 ### Removed
 
