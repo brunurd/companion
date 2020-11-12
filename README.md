@@ -1,3 +1,5 @@
+<img align="right" width="100" src="public/images/compy.svg" />
+
 # Companion
 
 ![license][license-badge]
@@ -11,7 +13,7 @@ A client to watch videos mainly youtube and twitch, but can access any website, 
 
 ![Screenshot][screenshot]
 
-[screenshot]: public/images/screenshot.jpg
+[screenshot]: public/images/screenshot.gif
 [license-badge]: https://img.shields.io/github/license/brunurd/companion
 [npm-version]: https://img.shields.io/github/package-json/v/brunurd/companion
 [linux-download]: https://github.com/brunurd/companion/releases/download/v1.5.3/Companion-1.5.3.AppImage
