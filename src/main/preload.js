@@ -1,7 +1,35 @@
 const { remote } = require('electron');
+const { resolve } = require('path');
+const fs = require('fs');
 
 const win = remote.getCurrentWindow();
+const os = process.platform;
 let mousePosBefore = remote.screen.getCursorScreenPoint();
+
+function saveWindowSetup() {
+  const directory = resolve(remote.app.getPath('home'), '.companion');
+  const path = resolve(directory, 'window.config.json');
+
+  if (!fs.existsSync(path)) {
+    fs.mkdirSync(directory);
+  }
+
+  const winSize = win.getSize();
+  const winPos = win.getPosition();
+
+  const config = {
+    width: winSize[0],
+    height: winSize[1],
+    x: winPos[0],
+    y: winPos[1],
+  };
+
+  fs.writeFile(path, JSON.stringify(config), {}, () => {});
+  return config;
+};
+
+win.on('resize', saveWindowSetup);
+win.on('move', saveWindowSetup);
 
 window['__COMPANION__'] = {
   isAlwaysOnTop: function () {
@@ -58,5 +86,9 @@ window['__COMPANION__'] = {
 
   isFullscreen: function () {
     return win.isFullScreen();
+  },
+
+  os: function () {
+    return os;
   },
 };

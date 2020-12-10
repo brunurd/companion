@@ -3,6 +3,8 @@
 import IconButton from './IconButton.svelte';
 
 const companion = window.__COMPANION__;
+const isDarwin = companion.os() === 'darwin';
+const rowClass = isDarwin ? 'reverse-row' : '';
 
 let pinned = companion.isAlwaysOnTop();
 let maximized = companion.isMaximized();
@@ -20,13 +22,13 @@ function maximizeToggle() {
 </script>
 
 <div class="client-bar">
-  <nav>
+  <nav class="{rowClass}">
     <div class="buttons-list">
       <IconButton onClick={pinToggle} icons={pinned ? 'fa-lock' : 'fa-unlock'} />
     </div>
-    <div class="buttons-list">
+  <div class="buttons-list {rowClass}">
       <IconButton onClick={companion.minimize} icons="fa-window-minimize" />
-      <IconButton onClick={maximizeToggle} icons={maximized ? 'fa-window-restore' : 'fa-window-maximize'} />
+      <IconButton onClick={maximizeToggle} icons={maximized ? 'fa-window-restore' : 'fa-window-maximize'} margin="0 10px" />
       <IconButton onClick={companion.close} icons="fa-times" />
     </div>
   </nav>
@@ -43,7 +45,12 @@ function maximizeToggle() {
 
 .buttons-list {
   display: flex;
+  flex-direction: row;
   -webkit-app-region: no-drag;
+}
+
+.reverse-row {
+  flex-direction: row-reverse;
 }
 
 nav {

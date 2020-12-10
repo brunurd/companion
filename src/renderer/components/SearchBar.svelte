@@ -9,6 +9,7 @@ let searchInput;
 let prevButtonInactive;
 let homeButtonInactive;
 let nextButtonInactive;
+let audioIcon = 'fa-volume-up';
 
 const checkHistoryButtonsInterval = setInterval(checkHistoryButtons, 1000);
 const updateURLInterval = setInterval(updateURL, 1000);
@@ -71,12 +72,18 @@ function updateURL() {
   localStorage.setItem('url', webviewUrl);
 }
 
+function muteToggle() {
+  const isMuted = $webview.isAudioMuted();
+  $webview.setAudioMuted(!isMuted);
+  audioIcon = $webview.isAudioMuted() ? 'fa-volume-off' : 'fa-volume-up';
+}
+
 </script>
 
 <form class="search-bar" on:submit={formSubmitHandle}>
   <nav>
     <IconButton onClick={prev} inactive={prevButtonInactive} icons="fa-arrow-left" />
-    <IconButton onClick={goHome} inactive={homeButtonInactive} icons="fa-home" />
+    <IconButton onClick={goHome} inactive={homeButtonInactive} icons="fa-home" margin="0 10px" />
     <IconButton onClick={next}  inactive={nextButtonInactive} icons="fa-arrow-right" />
   </nav>
   <input
@@ -84,6 +91,9 @@ function updateURL() {
     placeholder="Url here..."
     bind:value={localUrl}
     bind:this={searchInput} />
+  <div class="float-button">
+    <IconButton onClick={muteToggle} inactive={false} icons={audioIcon} color="#000" />
+  </div>
   <button
     type="submit"
     on:click={refresh}>
@@ -97,6 +107,7 @@ function updateURL() {
   width: 100%;
   display: flex;
   overflow: hidden;
+  position: relative;
 }
 
 nav {
@@ -114,6 +125,16 @@ input {
   border: none;
   border-bottom: 1px solid rgb(220, 220, 220);
   background-color: #fff;
+}
+
+.float-button {
+  position: absolute;
+  right: 65px;
+  height: 100%;
+  width: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 input:focus {

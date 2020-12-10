@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.5.4] - 2020-12-10
+
+### Added
+- Sound on/off button.
+- Store the current window size and position.
+
+### Fix
+- Development start command open two instance of the window.
+
+---
+
 ## [1.5.3] - 2020-10-20
 
 ### Changed

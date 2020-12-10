@@ -2,27 +2,24 @@
 
 export let icons;
 export let onClick;
+export let margin = '0';
+export let color = 'rgba(245, 245, 245)';
 export let inactive = false;
 
 </script>
 
-<div class="icon-button {inactive ? 'inactive' : ''}" on:click={onClick}>
+<div class="icon-button {inactive ? 'inactive' : ''}" on:click={onClick} style="margin: {margin};color: {color}">
   <i class="fa {icons}" />
 </div>
 
 <style>
 .icon-button {
   cursor: pointer;
-  margin-left: 10px;
-  color: rgba(245, 245, 245, 0.3);
-}
-
-.icon-button:first-child {
-  margin-left: 0;
+  opacity: 0.3;
 }
 
 .icon-button:hover {
-  color: rgba(247, 247, 247, 0.6);
+  opacity: 0.6;
 }
 
 .inactive {
