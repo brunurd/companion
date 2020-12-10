@@ -1,5 +1,7 @@
 const electron = require('electron');
 const { resolve } = require('path');
+const fs = require('fs');
+
 const { app, BrowserWindow } = electron;
 
 let win = null;
@@ -15,10 +17,33 @@ if (debug) {
   });
 }
 
+function loadWindowSetup(screen) {
+  const directory = resolve(app.getPath('home'), '.companion');
+  const path = resolve(directory, 'window.config.json');
+
+  if (!fs.existsSync(path)) {
+    const config = {
+      width: 500,
+      height: 450,
+      x: screen.size.width - 530,
+      y: screen.size.height - 550,
+    };
+    fs.mkdirSync(directory);
+    fs.writeFileSync(path, JSON.stringify(config));
+    return config;
+  }
+
+  const contents = fs.readFileSync(path);
+  return JSON.parse(contents);
+}
+
 const start = () => {
+  screen = electron.screen.getPrimaryDisplay();
+  const windowSetup = loadWindowSetup(screen);
+
   win = new BrowserWindow({
-    width: 500,
-    height: 450,
+    width: windowSetup.width,
+    height: windowSetup.height,
     icon: __dirname + '/images/compy.png',
     frame: false,
     webPreferences: {
@@ -31,15 +56,13 @@ const start = () => {
     },
   });
 
-  screen = electron.screen.getPrimaryDisplay();
-
-  let pos = {
-    x: screen.size.width - 530,
-    y: screen.size.height - 550,
-  };
+  const pos = { x: windowSetup.x, y: windowSetup.y };
+  const index = resolve(__dirname, 'index.html');
+  const fileUrl = `file://${index}`;
+  const url = debug ? process.env.ELECTRON_START_URL || fileUrl : fileUrl;
 
   win.setPosition(pos.x, pos.y);
-  win.loadURL('file://' + __dirname + '/index.html');
+  win.loadURL(url);
   win.on('closed', () => {
     win = null;
   });

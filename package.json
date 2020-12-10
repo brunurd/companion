@@ -38,7 +38,8 @@
   "license": "MIT",
   "homepage": "https://github.com/brunurd/companion#readme",
   "scripts": {
-    "start": "concurrently \"rollup -cw\" \"sleep 3 && npm run debug\"",
+    "start": "concurrently \"rollup -cw\" \"node src/delay.js\"",
+    "svelte": "sirv public",
     "build": "rollup -c",
     "electron": "electron .",
     "debug": "electron . debug",
