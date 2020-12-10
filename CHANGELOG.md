@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Fix
 - Development start command open two instance of the window.
+- The `ini` npm package before version 1.3.6 has a Prototype Pollution vulnerability.
 
 ---
 
