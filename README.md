@@ -13,6 +13,8 @@ Did you know Compy the companion? They are a friendly mini browser to pin on top
 
 ![Screenshot][screenshot]
 
+_Streamer at the screenshot: [@rawrafaela](https://www.twitch.tv/rawrafaela) member of the [@wakandastreamers](https://www.twitch.tv/team/wakandastreamers) team._
+
 [screenshot]: public/images/screenshot.gif
 [license-badge]: https://img.shields.io/github/license/brunurd/companion
 [npm-version]: https://img.shields.io/github/package-json/v/brunurd/companion
