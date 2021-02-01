@@ -7,6 +7,7 @@ export let expand;
 </script>
 
 <div class="webview { expand? 'full' : '' }">
+  <!-- svelte-ignore component-name-lowercase -->
   <webview 
     bind:this={$webview}
     src={$url}
