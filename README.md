@@ -18,6 +18,6 @@ _Streamer at the screenshot: [@rawrafaela](https://www.twitch.tv/rawrafaela) mem
 [screenshot]: public/images/screenshot.gif
 [license-badge]: https://img.shields.io/github/license/brunurd/companion
 [npm-version]: https://img.shields.io/github/package-json/v/brunurd/companion
-[linux-download]: https://github.com/brunurd/companion/releases/download/v1.5.4/Companion-1.5.4.AppImage
-[mac-download]: https://github.com/brunurd/companion/releases/download/v1.5.4/Companion-1.5.4.dmg
-[win-download]: https://github.com/brunurd/companion/releases/download/v1.5.4/Companion.1.5.4.exe
+[linux-download]: https://github.com/brunurd/companion/releases/download/v1.5.5/Companion-1.5.5.AppImage
+[mac-download]: https://github.com/brunurd/companion/releases/download/v1.5.5/Companion-1.5.5.dmg
+[win-download]: https://github.com/brunurd/companion/releases/download/v1.5.5/Companion.1.5.5.exe
