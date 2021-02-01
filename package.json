@@ -50,7 +50,9 @@
     "icons": "png2icons ./public/images/compy.png ./public/images/favicon -all -bc -i",
     "pack": "electron-builder",
     "pack:dir": "electron-builder --dir",
-    "dist": "electron-builder --win --x64 && electron-builder --mac --x64 && electron-builder --linux --x64",
+    "dist:win": "electron-builder --win --x64",
+    "dist:linux": "electron-builder --linux --x64",
+    "dist:mac": "electron-builder --mac --x64",
     "postinstall": "install-app-deps"
   },
   "devDependencies": {
