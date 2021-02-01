@@ -42,7 +42,7 @@ export default [
         dev: !production,
         preprocess: autoPreprocess(),
         css: (css) => {
-          css.write('public/build/bundle.css');
+          css.write('bundle.css');
         },
       }),
 
