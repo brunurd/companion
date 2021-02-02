@@ -2,8 +2,8 @@
 
 # Companion
 
-![license][license-badge]
-![npm-version][npm-version]
+[![license][license-badge]](LICENSE.md)
+[![npm-version][npm-version]](https://github.com/brunurd/companion/releases)
 
 Did you know Compy the companion? They are a friendly mini browser to pin on top of any other desktop app and keep doing your things while enjoying a live stream or a youtube video.
 
