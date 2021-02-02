@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.5.5] - 2021-02-01
+
+## Changes
+- Update electron and other modules recomendations
+
+# Fix
+- Fake user-agent as chrome to use in google account validation
+
+---
+
 ## [1.5.4] - 2020-12-10
 
 ### Added

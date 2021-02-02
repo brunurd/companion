@@ -2,7 +2,7 @@ const electron = require('electron');
 const { resolve } = require('path');
 const fs = require('fs');
 
-const { app, BrowserWindow } = electron;
+const { app, BrowserWindow, session } = electron;
 
 let win = null;
 let screen = null;
@@ -76,5 +76,13 @@ const preventReOpen = () => {
   }
 };
 
-app.on('ready', start);
+app.on('ready', () => {
+  session.defaultSession.webRequest.onBeforeSendHeaders((details, callback) => {
+    details.requestHeaders['User-Agent'] = 'Chrome';
+    callback({ cancel: false, requestHeaders: details.requestHeaders });
+  });
+
+  start();
+});
+
 app.on('activate', preventReOpen);
