@@ -131,10 +131,12 @@ input {
   position: absolute;
   right: 65px;
   height: 100%;
-  width: 16px;
+  width: 26px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  background-color: #fff;
+  padding: 0 10px;
 }
 
 input:focus {
