@@ -45,5 +45,6 @@ function showAppBar() {
 <style>
 .app {
   height: 100%;
+  font-family: 'Arial', 'Helvetica', sans-serif;
 }
 </style>

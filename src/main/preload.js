@@ -28,6 +28,11 @@ function saveWindowSetup() {
   return config;
 };
 
+function getAppInfoText() {
+  const version = remote.app.getVersion();
+  return `Companion v${version}`;
+}
+
 win.on('resize', saveWindowSetup);
 win.on('move', saveWindowSetup);
 
@@ -90,5 +95,9 @@ window['__COMPANION__'] = {
 
   os: function () {
     return os;
+  },
+
+  getAppInfoText: function() {
+    return getAppInfoText();
   },
 };

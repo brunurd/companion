@@ -6,7 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [1.5.6]
 
-## Fix
+### Added
+- Show version of the Companion app in the client bar
+
+### Fix
 - Mute toggle button don't overlap the search text input
 
 
@@ -14,10 +17,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [1.5.5] - 2021-02-01
 
-## Changes
+### Changes
 - Update electron and other modules recomendations
 
-# Fix
+### Fix
 - Fake user-agent as chrome to use in google account validation
 
 ---
