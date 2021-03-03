@@ -5,6 +5,7 @@ import IconButton from './IconButton.svelte';
 const companion = window.__COMPANION__;
 const isDarwin = companion.os() === 'darwin';
 const rowClass = isDarwin ? 'reverse-row' : '';
+const title = companion.getAppInfoText();
 
 let pinned = companion.isAlwaysOnTop();
 let maximized = companion.isMaximized();
@@ -26,7 +27,8 @@ function maximizeToggle() {
     <div class="buttons-list">
       <IconButton onClick={pinToggle} icons={pinned ? 'fa-lock' : 'fa-unlock'} />
     </div>
-  <div class="buttons-list {rowClass}">
+    <p class="app-title">{title}</p>
+    <div class="buttons-list {rowClass}">
       <IconButton onClick={companion.minimize} icons="fa-window-minimize" />
       <IconButton onClick={maximizeToggle} icons={maximized ? 'fa-window-restore' : 'fa-window-maximize'} margin="0 10px" />
       <IconButton onClick={companion.close} icons="fa-times" />
@@ -60,5 +62,14 @@ nav {
   -webkit-app-region: drag;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.app-title {
+  text-align: center;
+  color: rgba(245, 245, 245, 0.3);
+  font-weight: 700;
+  margin: 0;
+  font-size: 0.7em;
 }
 </style>
