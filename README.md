@@ -7,6 +7,16 @@
 
 Did you know Compy the companion? They are a friendly mini browser to pin on top of any other desktop app and keep doing your things while enjoying a live stream or a youtube video.
 
+### Tested services
+
+|Name|Works|
+|-|-|
+|Twitch|:heavy_check_mark:|
+|Youtube|:heavy_check_mark:|
+|SoundCloud|:heavy_check_mark:|
+|Netflix|:x:|
+|DisneyPlus|:x:|
+
 ## Downloads
 
 [Windows x64][win-download] | [macOS][mac-download] | [Linux][linux-download]
