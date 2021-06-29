@@ -4,14 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [1.5.6]
+## [1.5.6] - 2021-06-29
 
 ### Added
 - Show version of the Companion app in the client bar
 
 ### Fix
 - Mute toggle button don't overlap the search text input
-
+- Security updates
 
 ---
 
