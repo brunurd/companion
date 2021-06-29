@@ -91,9 +91,11 @@ function muteToggle() {
     placeholder="Url here..."
     bind:value={localUrl}
     bind:this={searchInput} />
-  <button class="float-button">
-    <IconButton onClick={muteToggle} inactive={false} icons={audioIcon} color="#000" />
-  </button>
+  <div class="float-buttons">
+    <button class="float-button">
+      <IconButton onClick={muteToggle} inactive={false} icons={audioIcon} color="#000" />
+    </button>
+  </div>
   <button
     type="submit"
     on:click={refresh}>
@@ -131,19 +133,23 @@ input:focus {
   background-color: #eee;
 }
 
-.float-button {
+.float-buttons {
   position: absolute;
-  right: 65px;
+  right: 60px;
+  box-sizing: border-box;
   height: 100%;
-  width: 36px;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: stretch;
   align-items: center;
   background-color: #fff;
-  padding: 0 10px;
-  margin-right: -6px;
-  border: none;
   border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.float-button {
+  height: 100%;
+  width: 36px;
+  background-color: #fff;
 }
 
 .float-button:hover, .float-button:focus {
