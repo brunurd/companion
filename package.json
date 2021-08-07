@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "companion",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "Did you know Compy the companion? They are a friendly mini browser to pin on top of any other desktop app and keep doing your things while enjoying a live stream or a youtube video.",
   "main": "public/main.min.js",
   "build": {
@@ -65,7 +65,7 @@
     "babel-jest": "^26.6.3",
     "concurrently": "^5.3.0",
     "electron": "9.4.0",
-    "electron-builder": "^22.11.7",
+    "electron-builder": "^22.9.1",
     "electron-reload": "^1.5.0",
     "eslint": "^7.18.0",
     "eslint-plugin-svelte3": "^2.7.3",
@@ -81,7 +81,6 @@
     "svelte-jester": "^1.3.0",
     "svelte-preprocess": "^3.9.12"
   },
-  "dependencies": {},
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.js"

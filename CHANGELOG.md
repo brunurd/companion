@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.5.7] - 2021-08-07
+### Fix
+- Node.js security fix: [https://github.com/advisories/GHSA-5fg8-2547-mr8q](https://github.com/advisories/GHSA-5fg8-2547-mr8q)
+
 ## [1.5.6] - 2021-06-29
 
 ### Added
