@@ -6,7 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [1.5.8] - 2021-09-27
 ### Fix
-- Node.js security fixes (path-parse update on package-lock).
+- Node.js security fixes (ansi-regex updated on package-lock).
+- Node.js security fixes (path-parse updated on package-lock).
 
 ## [1.5.7] - 2021-08-07
 ### Fix

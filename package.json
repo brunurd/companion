@@ -62,6 +62,7 @@
     "@rollup/plugin-node-resolve": "^8.4.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/svelte": "^3.0.3",
+    "ansi-regex": "^6.0.1",
     "babel-jest": "^26.6.3",
     "concurrently": "^5.3.0",
     "electron": "9.4.0",
