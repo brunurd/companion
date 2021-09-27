@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "companion",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "description": "Did you know Compy the companion? They are a friendly mini browser to pin on top of any other desktop app and keep doing your things while enjoying a live stream or a youtube video.",
   "main": "public/main.min.js",
   "build": {
