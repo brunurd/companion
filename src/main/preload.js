@@ -1,4 +1,6 @@
 const { remote } = require('electron');
+// TODO: use: const { BrowserWindow } = require('@electron/remote');
+// https://github.com/electron/remote
 const { resolve } = require('path');
 const fs = require('fs');
 

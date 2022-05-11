@@ -49,12 +49,21 @@ const start = () => {
     webPreferences: {
       nodeIntegration: false,
       preload: __dirname + '/preload.min.js',
-      webviewTag: true,
+      webviewTag: false,
       enableRemoteModule: true,
       worldSafeExecuteJavaScript: true,
       nativeWindowOpen: true,
+      contextIsolation: true,
     },
   });
+
+  // TODO: use BrowserView instead of WebviewTag
+  // const view = new BrowserView();
+  // win.setBrowserView(view);
+  // view.setBounds({ x: 0, y: 0, width: 300, height: 300 });
+  // view.webContents.loadURL('https://electronjs.org');
+
+  // TODO: manage BrowserView URL from renderer code
 
   const pos = { x: windowSetup.x, y: windowSetup.y };
   const index = resolve(__dirname, 'index.html');
