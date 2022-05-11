@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+
+## [1.6.0] - 2022-
+### Fix
+- Security updates: bump ajv from 6.12.2 to 6.12.6
+- Security updates: bump electron from 11.5.0 to 13.6.6
+- Replace WebviewTag by BrowserView
+- Replace electron.remote by @electron/remote
+
 ## [1.5.9] - 2021-11-17
 ### Fix
 - Bump Electron version to 11.5.0 for security reasons.
