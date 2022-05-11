@@ -5,7 +5,7 @@
 [![license][license-badge]](LICENSE.md)
 [![npm-version][npm-version]](https://github.com/brunurd/companion/releases)
 
-Did you know Compy the companion? They are a friendly mini browser to pin on top of any other desktop app and keep doing your things while enjoying a live stream or a youtube video.
+Did you know Compy, The Companion? They are a friendly mini browser to pin on top of any other desktop app and keep doing your stuff while enjoying a live stream, video on demand, or consulting any web content.
 
 ### Tested services
 
@@ -18,7 +18,9 @@ Did you know Compy the companion? They are a friendly mini browser to pin on top
 |DisneyPlus|:x:|DRM problem|
 
 ## Downloads
-:warning: **Observation:** At the moments the releases are made manually, I need time to create a proper continous distribution automation routine, follow the instruction on [How to Compile](#user-content-how-to-compile) if you want a specific version.
+:warning: **Observation:** The releases are currently deployed manually. I need time to create a proper Continuous Delivery automation routine.  
+Follow the instruction on [How to Compile](#user-content-how-to-compile) if you want a specific version.
+
 
 [Windows x64][win-download] | [macOS][mac-download] | [Linux][linux-download]
 
@@ -27,15 +29,16 @@ Did you know Compy the companion? They are a friendly mini browser to pin on top
 _Streamer at the screenshot: [@rawrafaela](https://www.twitch.tv/rawrafaela) member of the [@wakandastreamers](https://www.twitch.tv/team/wakandastreamers) team._
 
 ## How to Compile
-Pre-requisites:
+### Pre-requisites
 - Run on the target platform: Windows, MacOS or Linux (In Linux it uses AppImage)
 - Node.js
 
-Install dependencies with:
+### Install dependencies with
 ```bash
 npm install
 ```
-Run the distribution command:
+
+### Run the dist command
 ```bash
 # For Linux
 npm run dist:linux
