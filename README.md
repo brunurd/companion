@@ -18,7 +18,7 @@ Did you know Compy the companion? They are a friendly mini browser to pin on top
 ### Tested services
 |Name|Works|Info|
 |-|-|-|
-|Twitch|:heavy_check_mark:|Ok|
+|Twitch|⚠️|Authentication issue, can't login|
 |Youtube|:heavy_check_mark:|Ok|
 |SoundCloud|:heavy_check_mark:|Ok|
 |Netflix|:x:|DRM problem, needs Widevine|
