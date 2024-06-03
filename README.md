@@ -10,6 +10,7 @@ Did you know Compy the companion? They are a friendly mini browser to pin on top
 
 
 ⚠️ **Disclaimers:**  
+- I've been working in an browser extension to be this app replacement, it was in a very, very early stage: <https://github.com/brunurd/easy-pip>
 - For a full (and more secure) browser experience with the _always-on-top_ feature I recommend use Firefox (it has the _picture-in-picture_ feature built-in).
 - At the moments the releases are made manually, I need time to create a proper continous distribution automation routine, follow the instruction on [How to Compile](#user-content-how-to-compile) if you want a specific version.
 
